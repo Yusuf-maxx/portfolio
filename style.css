@@ -348,6 +348,28 @@ section {
 .skill-icon.c { color: #00599c; background: #1a1a1a; font-size: 2.2rem; font-weight: bold; }
 .c-letter { font-size: 2.2rem; font-weight: bold; }
 
+/* About Section */
+.about-section {
+  margin: 48px 0 0 0;
+  padding-bottom: 24px;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.about-text {
+  color: #bfc9e0;
+  font-size: 1.13rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 24px auto;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .skills-slider {
