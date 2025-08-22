@@ -1,142 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yusuf | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-bg">
-  <div class="centered-card">
-    <nav class="modern-nav">
-      <span class="logo">Yusuf</span>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="nav-btn">Get in touch</button>
-    </nav>
-    <section class="hero-modern">
-      <div class="hero-left">
-        <h1 class="headline">
-          Turning Ideas into <span class="accent">Functional</span> & <span class="accent">Stylish</span> Websites
-        </h1>
-        <p class="subtitle">
-          I’m Yusuf, a web developer and engineering student.<br>
-          I create modern, minimal, and interactive web experiences.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <a href="#skills" class="btn secondary">View Skills</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <img src="myphoto.jpg" alt="Yusuf's Avatar" class="modern-avatar" width="220" height="220">
-      </div>
-    </section>
-    <!-- About Me Section Start -->
-    <section id="about" class="about-section">
-      <h2 class="about-title">About Me</h2>
-      <p class="about-text">
-        Hi, I’m Md Yusuf, a passionate Web Developer and an Engineering Student who loves turning ideas into digital reality. My focus is on creating modern, minimal, and interactive web experiences that balance clean design with powerful functionality.<br>
+  <div class="container-lg py-4">
+    <!-- centered card that floats above the page background -->
+    <div class="centered-card">
+       <nav class="navbar navbar-expand-lg modern-nav mb-4">
+         <div class="container-fluid px-0">
+           <a class="navbar-brand logo" href="#">Yusuf</a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+             aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+ 
+           <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+             <ul class="navbar-nav mb-2 mb-lg-0">
+               <li class="nav-item px-3"><a class="nav-link" href="#about">Home</a></li>
+               <li class="nav-item px-3"><a class="nav-link" href="#projects">Projects</a></li>
+               <li class="nav-item px-3"><a class="nav-link" href="#contact">Contact</a></li>
+             </ul>
+           </div>
+ 
+           <div class="d-flex align-items-center">
+             <a href="#contact" class="btn nav-btn">Get in touch</a>
+           </div>
+         </div>
+       </nav>
+ 
+       <!-- Hero Section (Grid) -->
+       <section class="hero-modern mb-5">
+         <div class="row align-items-center g-4">
+           <div class="hero-left col-lg-7 col-12 text-center text-lg-start">
+             <h1 class="headline mb-3">
+               Turning Ideas into <span class="accent">Functional</span> &amp; <span class="accent">Stylish</span> Websites
+             </h1>
+             <p class="subtitle mb-4">
+               I’m Yusuf, a web developer and engineering student.<br>
+               I create modern, minimal, and interactive web experiences.
+             </p>
+             <div class="hero-actions d-grid gap-3 d-sm-flex justify-content-center justify-content-lg-start">
+               <a href="#projects" class="btn primary">View Projects</a>
+               <a href="#skills" class="btn secondary">View Skills</a>
+             </div>
+           </div>
+ 
+           <div class="hero-right col-lg-5 col-12 text-center">
+             <img src="myphoto.jpg" alt="Yusuf Avatar" class="modern-avatar img-fluid" width="260" height="260">
+           </div>
+         </div>
+       </section>
+ 
+       <!-- About Me -->
+       <section id="about" class="about-section mb-5">
+         <div class="row justify-content-center">
+           <div class="col-lg-10">
+             <h2 class="about-title mb-3">About Me</h2>
+             <p class="about-text">
+               Hi, I’m Md Yusuf — a web developer and engineering student focused on clean, accessible, and performant web experiences.
+               I work with HTML, CSS, JavaScript and backend basics, and I enjoy building UI that looks great and feels smooth.
+             </p>
+           </div>
+         </div>
+       </section>
+ 
+       <!-- Skills (grid-based horizontal slider) -->
+       <section id="skills" class="skills-section mb-5">
+         <div class="row">
+           <div class="col-12 mb-3">
+             <h2 class="skills-title">Skills</h2>
+           </div>
+ 
+           <div class="col-12">
+             <div class="skills-slider d-grid"
+                  style="grid-auto-flow: column; grid-auto-columns: minmax(100px, 1fr); gap:32px; overflow-x:auto; padding:12px 0;">
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon html5 d-flex align-items-center justify-content-center"><i class="fab fa-html5"></i></div>
+                 <span>HTML5</span>
+               </div>
+ 
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon css3 d-flex align-items-center justify-content-center"><i class="fab fa-css3-alt"></i></div>
+                 <span>CSS3</span>
+               </div>
+ 
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon js d-flex align-items-center justify-content-center"><i class="fab fa-js"></i></div>
+                 <span>JavaScript</span>
+               </div>
+ 
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon python d-flex align-items-center justify-content-center"><i class="fab fa-python"></i></div>
+                 <span>Python</span>
+               </div>
+ 
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon java d-flex align-items-center justify-content-center"><i class="fab fa-java"></i></div>
+                 <span>Java</span>
+               </div>
+ 
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon c d-flex align-items-center justify-content-center"><span class="c-letter">C</span></div>
+                 <span>C</span>
+               </div>
+ 
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon git d-flex align-items-center justify-content-center"><i class="fab fa-git-alt"></i></div>
+                 <span>Git</span>
+               </div>
+ 
+               <div class="skill-item d-flex flex-column align-items-center">
+                 <div class="skill-icon github d-flex align-items-center justify-content-center"><i class="fab fa-github"></i></div>
+                 <span>GitHub</span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+       <!-- Projects -->
+       <section id="projects" class="projects-section mb-5">
+         <h2 class="projects-title mb-4">Projects</h2>
 
-        My journey into technology started with curiosity about how software and websites work. Over time, I’ve built a strong foundation in C, Java, Python, HTML, CSS, and JavaScript, while also exploring version control tools like Git & GitHub to collaborate and manage projects effectively.<br>
-
-        I’m currently diving deeper into full-stack development, learning how to build scalable applications that not only solve real problems but also deliver smooth user experiences. I enjoy challenging myself with projects that test both my problem-solving skills and creativity.<br>
-
-        Beyond coding, I believe in continuous learning and improving every day. My long-term goal is to grow into a skilled Software Engineer, contributing to impactful projects and helping shape innovative solutions in the tech world.
-    </section>
-    <!-- About Me Section End -->
-
-    <!-- Skills Section Start -->
-    <section id="skills" class="skills-section">
-      <h2 class="skills-title">Skills</h2>
-      <div class="skills-slider">
-        <div class="skill-item">
-          <div class="skill-icon html5">
-            <i class="fab fa-html5"></i>
-          </div>
-          <span>HTML5</span>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon css3">
-            <i class="fab fa-css3-alt"></i>
-          </div>
-          <span>CSS3</span>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon js">
-            <i class="fab fa-js"></i>
-          </div>
-          <span>JavaScript</span>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon python">
-            <i class="fab fa-python"></i>
-          </div>
-          <span>Python</span>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon java">
-            <i class="fab fa-java"></i>
-          </div>
-          <span>Java</span>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon c">
-            <span class="c-letter">C</span>
-          </div>
-          <span>C</span>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon github">
-            <i class="fab fa-github"></i>
-          </div>
-          <span>GitHub</span>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon git">
-            <i class="fab fa-git-alt"></i>
-          </div>
-          <span>Git</span>
-        </div>
-      </div>
-    </section>
-    <!-- Skills Section End -->
-
-    <!-- Project Section Start -->
-    <section id="projects" class="projects-section">
-      <h2 class="projects-title">Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Portfolio Website</h3>
-          <p>A personal portfolio to showcase my skills, experience, and projects. Built with HTML, CSS, and a modern UI approach.</p>
-          <a href="#" class="project-link" target="_blank">View Code</a>
-        </div>
-        <div class="project-card">
-          <h3>Python Chatbot</h3>
-          <p>A simple chatbot built using Python that can answer basic questions and interact with users.</p>
-          <a href="#" class="project-link" target="_blank">View Code</a>
-        </div>
-        <div class="project-card">
-          <h3>Java Calculator</h3>
-          <p>A mini calculator application developed in Java for basic arithmetic operations.</p>
-          <a href="#" class="project-link" target="_blank">View Code</a>
-        </div>
-        <div class="project-card">
-          <h3>Weather App</h3>
-          <p>A web app that shows real-time weather information using a public API. Built with HTML, CSS, and JavaScript.</p>
-          <a href="#" class="project-link" target="_blank">View Code</a>
-        </div>
-      </div>
-    </section>
-    <!-- Project Section End -->
-
-    <footer>
-      <p>© 2025 MD Yusuf | Built with ❤️ and HTML/CSS</p>
-    </footer>
-  </div>
-</body>
-</html>
+         <!-- 3 canonical project cards: Beginner / Intermediate / Advanced -->
+         <div class="projects-grid">
+           <div class="project-card">
+             <div class="card-inner">
+               <h3>Beginner Project</h3>
+               <p>Small, focused project to demonstrate fundamentals and clean code.</p>
+               <!-- point this to the real file/folder containing the project's source -->
+               <a href="projects/beginner/index.html" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+             </div>
+           </div>
+ 
+           <div class="project-card">
+             <div class="card-inner">
+               <h3>Intermediate Project</h3>
+               <p>Medium complexity project showing componentization and basic state/logic.</p>
+               <a href="projects/intermediate/index.html" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+             </div>
+           </div>
+ 
+           <div class="project-card">
+             <div class="card-inner">
+               <h3>Advanced Project</h3>
+               <p>Larger project with routing, API integration, and polished UI/UX.</p>
+               <a href="projects/advanced/index.html" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+       <!-- Contact / Footer -->
+       <section id="contact" class="mb-5">
+         <div class="row">
+           <div class="col-12 text-center">
+             <p>Contact: <a href="mailto:mdyusufsheikh7077@gmail.com">mdyusufsheikh7077@gmail.com</a></p>
+             <p class="mt-2">© 2025 MD Yusuf | Built with ❤️ and HTML/CSS</p>
+           </div>
+         </div>
+       </section>
+    </div> <!-- /.centered-card -->
+   </div>
+ 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+ </html>
