@@ -30,6 +30,11 @@ body.dark-bg {
   z-index: 5;
 }
 
+/* Ensure the main card doesn't clip hover glows (keep visible) */
+.centered-card {
+  overflow: visible; /* already set, keep to allow glows */
+}
+
 /* keep container inside card from touching edges on small screens */
 .container-lg > .centered-card {
   padding-left: 28px;
@@ -349,65 +354,91 @@ section {
   letter-spacing: -1px;
 }
 
+/* Adjust spacing for Skills: equal left/right padding and more top room for hover glow */
+.skills-section {
+  margin-top: 72px;       /* more space above section so hover glow isn't clipped */
+  padding-top: 28px;
+  padding-bottom: 28px;
+  overflow: visible;
+  position: relative;
+}
+
 .skills-slider {
-  display: flex;
+  /* match centered-card inner padding so slider appears centered with equal space each side */
+  padding-inline: 32px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  gap: 32px;              /* keep original gap */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ensure the centered card padding aligns with slider for consistent left/right spacing */
+.centered-card {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* Responsive tweaks (smaller paddings on narrow screens) */
+@media (max-width: 700px) {
+  .skills-section {
+    margin-top: 48px;
+    padding-top: 20px;
+  }
+  .skills-slider {
+    padding-inline: 20px;
+    gap: 20px;
+  }
+}
+
+/* Horizontal skills slider: equal padding both sides to center content visually */
+.skills-slider {
+  display: grid; /* keep grid-auto-flow column as used in HTML */
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(100px, 1fr);
   gap: 32px;
   overflow-x: auto;
-  padding: 24px 0 24px 0;
   scroll-behavior: smooth;
-  position: relative;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-}
-.skills-slider::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  align-items: center;
+  padding-inline: 32px;  /* equal spacing from left & right edges */
+  padding-top: 8px;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Remove fade overlays */
-.skills-slider::before,
-.skills-slider::after {
-  display: none !important;
-  content: none !important;
-}
+/* hide native scrollbar */
+.skills-slider::-webkit-scrollbar { display: none; }
+.skills-slider { scrollbar-width: none; -ms-overflow-style: none; }
 
-/* Skill Item */
+/* make each skill vertically centered and give extra top room for hover */
 .skill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 110px;
-  transition: transform 0.22s cubic-bezier(.4,2,.6,1), box-shadow 0.22s;
+  padding-top: 8px;     /* keeps icon away from top edge */
+  transition: transform .22s, box-shadow .22s;
   position: relative;
-  z-index: 1;
-  background: transparent;
 }
 
+/* keep icon above other elements when hovered */
 .skill-icon {
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: #232946;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 12px #0003;
-  transition: 
-    transform 0.22s cubic-bezier(.4,2,.6,1),
-    box-shadow 0.22s,
-    background 0.22s;
-  will-change: transform, box-shadow;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  transform-origin: center center;
+  transition: transform .22s cubic-bezier(.4,2,.6,1), box-shadow .22s;
 }
 
+/* bring hovered icon to front and ensure glow is visible */
 .skill-item:hover .skill-icon,
 .skill-item:focus-within .skill-icon {
+  z-index: 6;
   transform: scale(1.18);
-  box-shadow: 0 0 0 8px #3b82f633, 0 8px 32px #3b82f655;
-  background: #232946;
+  box-shadow: 0 0 0 10px rgba(59,130,246,0.12), 0 12px 36px rgba(3,6,12,0.45);
 }
 
 /* Skill name */
