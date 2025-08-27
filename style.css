@@ -223,6 +223,28 @@ body.dark-bg {
   flex-direction: column;
 }
 
+/* Project card hover - lift, scale and stronger shadow */
+.project-card {
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms cubic-bezier(.2,.9,.2,1);
+  transform-origin: center center;
+  will-change: transform, box-shadow;
+  z-index: 1;
+}
+
+/* Hover / focus state — card appears to come out of the page */
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(3,6,12,0.55), 0 8px 26px rgba(3,6,12,0.25);
+  z-index: 6; /* bring above siblings so lift isn't clipped visually */
+}
+
+/* Slightly stronger lift on pointer press for tactile feedback */
+.project-card:active {
+  transform: translateY(-6px) scale(1.01);
+  transition-duration: 140ms;
+}
+
 /* Inner content */
 .project-card .card-inner {
   padding: 22px;
