@@ -75,7 +75,4 @@ The portfolio includes projects categorized by **Beginner, Intermediate, and Adv
 
 ---
 
-## 🛠️ How to Run Locally  
-
-If you want to explore/edit the code locally:  
 
