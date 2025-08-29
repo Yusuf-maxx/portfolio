@@ -29,8 +29,8 @@
               <h3>Fullstack App (Demo)</h3>
               <p>Example with frontend, backend endpoint and deployment notes.</p>
               <div class="project-actions">
-                <a href="fullstack-demo/index.html" class="project-btn demo">Live Demo</a>
-                <a href="fullstack-demo/code/index.html" class="project-btn code">Open Code</a>
+                <button type="button" class="project-btn demo" data-href="fullstack-demo/index.html">Live Demo</button>
+                <button type="button" class="project-btn code" data-href="fullstack-demo/code/index.html">Open Code</button>
               </div>
             </div>
           </div>
@@ -40,8 +40,8 @@
               <h3>SPA with Router</h3>
               <p>Single-page app demonstrating routing, lazy loading and state.</p>
               <div class="project-actions">
-                <a href="spa-router/index.html" class="project-btn demo">Live Demo</a>
-                <a href="spa-router/code/index.html" class="project-btn code">Open Code</a>
+                <button type="button" class="project-btn demo" data-href="spa-router/index.html">Live Demo</button>
+                <button type="button" class="project-btn code" data-href="spa-router/code/index.html">Open Code</button>
               </div>
             </div>
           </div>
@@ -54,5 +54,12 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // simple handler: buttons with data-href navigate in same tab
+    document.querySelectorAll('.project-btn[data-href]').forEach(btn => {
+      btn.addEventListener('click', () => { window.location.href = btn.dataset.href; });
+      btn.addEventListener('keydown', e => { if (e.key === 'Enter') window.location.href = btn.dataset.href; });
+    });
+  </script>
 </body>
 </html>
