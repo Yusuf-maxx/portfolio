@@ -29,8 +29,8 @@
               <h3>Portfolio Starter</h3>
               <p>Minimal portfolio template showing layout and responsive basics.</p>
               <div class="project-actions">
-                <a href="portfolio/index.html" class="project-btn demo">Live Demo</a>
-                <a href="portfolio/code/index.html" class="project-btn code">Open Code</a>
+                <button type="button" class="project-btn demo" data-href="portfolio/index.html">Live Demo</button>
+                <button type="button" class="project-btn code" data-href="portfolio/code/index.html">Open Code</button>
               </div>
             </div>
           </div>
@@ -40,8 +40,8 @@
               <h3>Tip Calculator</h3>
               <p>Small JS app demonstrating DOM interaction and simple logic.</p>
               <div class="project-actions">
-                <a href="tip-calculator/index.html" class="project-btn demo">Live Demo</a>
-                <a href="tip-calculator/code/index.html" class="project-btn code">Open Code</a>
+                <button type="button" class="project-btn demo" data-href="tip-calculator/index.html">Live Demo</button>
+                <button type="button" class="project-btn code" data-href="tip-calculator/code/index.html">Open Code</button>
               </div>
             </div>
           </div>
@@ -51,8 +51,8 @@
               <h3>Landing Hero</h3>
               <p>Responsive hero section with CTA and simple CSS effects.</p>
               <div class="project-actions">
-                <a href="hero/index.html" class="project-btn demo">Live Demo</a>
-                <a href="hero/code/index.html" class="project-btn code">Open Code</a>
+                <button type="button" class="project-btn demo" data-href="hero/index.html">Live Demo</button>
+                <button type="button" class="project-btn code" data-href="hero/code/index.html">Open Code</button>
               </div>
             </div>
           </div>
@@ -65,5 +65,12 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // buttons with data-href navigate in same tab (keyboard accessible)
+    document.querySelectorAll('.project-btn[data-href]').forEach(btn => {
+      btn.addEventListener('click', () => { window.location.href = btn.dataset.href; });
+      btn.addEventListener('keydown', e => { if (e.key === 'Enter') window.location.href = btn.dataset.href; });
+    });
+  </script>
 </body>
 </html>
